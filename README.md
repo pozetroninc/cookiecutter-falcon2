@@ -11,7 +11,7 @@ Now you can create new projects using your favourite template.
 Create a falcon skeleton project
 To do it you need to clone the git repository:
 ```
-git clone https://github.com/dgarana/cookiecutter-falcon.git
+git clone https://github.com/7ideas/cookiecutter-falcon.git
 ```
 
 To create the skel you need to indicate to cookiecutter where the template is:
