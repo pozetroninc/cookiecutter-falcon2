@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 RUN ["apt-get", "update"]
 RUN ["apt-get", "install", "-y", "python3-dev", "libev-dev"]
 
-RUN ["pip", "install", "wheel", "falcon==2.0.0", "bjoern==2.0.1"]
+RUN ["pip", "install", "wheel", "falcon==2.0.0", "bjoern==3.1.0"]
 
 ADD . /usr/src/app
 RUN ["python", "-m", "pip", "install", "-r", "requirements/requirements.txt"]
