@@ -1,24 +1,24 @@
-h1. Cookiecutter Falcon 2.0
+# Cookiecutter Falcon 2.0
 
 This guide should get you started with Falcon 2.0 projects quickly by using the wonderful cookicutter.
 
-h3. Cookiecutter
+### Cookiecutter
 Cookiecutter is a command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.
 
-h3. Install cookiecutter
+### Install cookiecutter
 It's simple, you only need to install python package:
 ```
 pip install cookiecutter
 ```
 Now you can create new projects using your new favourite template.
 
-h3. Get the template
+### Get the template
 You need to clone the git repository:
 ```
 git clone https://github.com/pozetroninc/cookiecutter-falcon2.git
 ```
 
-h3. Create skeleton
+### Create skeleton
 To create the skeleton you need to indicate to cookiecutter where the template is:
 ```bash
 cd cookiecutter-falcon
