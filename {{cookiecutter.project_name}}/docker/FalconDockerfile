@@ -1,0 +1,19 @@
+FROM python:3
+
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+RUN ["apt-get", "update"]
+RUN ["apt-get", "install", "-y", "python3-dev", "libev-dev"]
+
+RUN ["pip", "install", "wheel", "falcon==2.0.0", "bjoern==2.0.1"]
+
+ADD . /usr/src/app
+RUN ["python", "-m", "pip", "install", "-r", "requirements/requirements.txt"]
+RUN ["python", "setup.py", "develop"]
+
+RUN mkdir -p docker/api/
+
+EXPOSE 9001
+
+CMD ["./docker/falcon-docker-entrypoint.sh", "start"]

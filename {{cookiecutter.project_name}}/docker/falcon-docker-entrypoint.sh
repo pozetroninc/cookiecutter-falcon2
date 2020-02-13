@@ -10,7 +10,7 @@ if [ $1 = 'start' ]; then
             exit 1
         fi
         sleep $sleep_time
-        exec gunicorn {{cookiecutter.project_slug}}.app:app --bind 0.0.0.0:8000 --reload -R --env PYTHONUNBUFFERED=1 -k gevent
+        exec python ./{{ cookiecutter.project_slug }}/run_bjoern.py --env PYTHONUNBUFFERED=1
 
         if [ $? -eq 0 ]; then
             flag=1
@@ -20,4 +20,3 @@ if [ $1 = 'start' ]; then
         fi
     done
 fi
-

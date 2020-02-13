@@ -1,44 +1,51 @@
-Cookiecutter is a command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.
-In this page we are going to show how to create new falcon projects.
+h1. Cookiecutter Falcon 2.0
 
-Install cookiecutter
+This guide should get you started with Falcon 2.0 projects quickly by using the wonderful cookicutter.
+
+h3. Cookiecutter
+Cookiecutter is a command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.
+
+h3. Install cookiecutter
 It's simple, you only need to install python package:
 ```
 pip install cookiecutter
 ```
-Now you can create new projects using your favourite template.
+Now you can create new projects using your new favourite template.
 
-Create a falcon skeleton project
-To do it you need to clone the git repository:
+h3. Get the template
+You need to clone the git repository:
 ```
-git clone https://github.com/7ideas/cookiecutter-falcon.git
+git clone https://github.com/pozetroninc/cookiecutter-falcon2.git
 ```
 
-To create the skel you need to indicate to cookiecutter where the template is:
+h3. Create skeleton
+To create the skeleton you need to indicate to cookiecutter where the template is:
 ```bash
 cd cookiecutter-falcon
 cookiecutter .
 ```
 
 The tool is interactive and it will request for some information as:
-* project_name 
+* project_name
 * project_slug
 * author_name
 * author_mail
 * project_description [A short description of the project.]
 * project_url [example.com]
-* use_docker 
+* use_docker
 * use_mongodb
-* use_redisdb 
+* use_redisdb
 * Select open_source_license or not open source
+
+Note: The project_name should not contain spaces or other characters which aren't valid directory names.
 
 When finished, a folder in the current directory with the name of selected "project_name" step given is created. You only need to move it where you want it lives:
 
 ```
-cd my_project
+cd my-project
 tree .
 .
-├── my_project
+├── my-project
 │   ├── app.py
 │   ├── __init__.py
 │   ├── sample
@@ -61,8 +68,9 @@ tree .
 │   └── test-requirements.txt
 ├── setup.py
 └── tox.ini
- 
+
 5 directories, 18 files
 ```
- 
-  
+
+Note: This project is a fork of the original project for Falcon 1.0 projects at https://github.com/7ideas/cookiecutter-falcon
+This fork changes very little and the majority of the work is directly attributable to the folks at 7ideas.

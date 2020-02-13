@@ -24,10 +24,10 @@ To deploy the app locally (for testing/development), you will need to:
 #. Serve the application itself:
    .. code-block:: bash
         export FALCON_SETTINGS_MODULE={{cookiecutter.project_slug}}.settings.local
-        gunicorn {{ cookiecutter.project_slug }}.app:app --bind:127.0.0.1:8000 --reload
+        python {{ cookiecutter.project_slug }}/run_bjoern.py
 
    Or
-   
+
    .. code-block:: bash
         export FALCON_SETTINGS_MODULE={{cookiecutter.project_slug}}.settings.local
         python {{ cookiecutter.project_slug}}/app.py
@@ -39,5 +39,19 @@ It is very important to set the environment before serving the app or it won't w
 Docker
 ^^^^^^
 
-To tun docker container application you just need to run:
+To run the docker containerized application you just need to run:
+
+.. code-block:: bash
+    $ docker-compose up --build
+
+To build and push the containerized container you first need to update the `Makefile`
+with the correct values for `NS = [DOCKER_REGISTRY]/[PROJECT-ID]`
+
+e.g.
+.. code-block:: bash
+    NS = gcr.io/my_project
+or for the Docker Hub
+.. code-block:: bash
+    NS = [hub_user]
+
 {% endif %}

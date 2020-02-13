@@ -4,6 +4,7 @@ Config import handler
 This let us import settings, and don't care about:
 >>> settings = importlib.import_module('module_name')
 """
+from __future__ import absolute_import
 import os
 import importlib
 
@@ -17,4 +18,3 @@ except AttributeError:
     to_import = [name for name in my_module_dict if not name.startswith('_')]
 
 globals().update({name: my_module_dict[name] for name in to_import})
-

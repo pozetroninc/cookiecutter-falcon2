@@ -8,7 +8,6 @@ import json
 import falcon
 
 # Local imports
-from {{ cookiecutter.project_slug }} import settings
 
 
 class SampleResource(object):
